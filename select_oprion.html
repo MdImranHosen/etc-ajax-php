@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Select Option Demo</title>
+	<script type="text/javascript">
+		function populate(s1, s2){
+         var s1 = document.getElementById(s1);
+         var s2 = document.getElementById(s2);
+         s2.innerHTML = "";
+         if (s1.value == "1") {
+         	var optionArray = ["0|Program Year", "1|1st year", "2|2nd year", "3|3rd year", "4|4th year"];
+         } else if (s1.value == "2") {
+         	var optionArray = ["0|Program Year", "5|1st year", "6|2nd year", "7|3rd year"];
+         } else if (s1.value == "3") {
+         	var optionArray = ["8|Masters Final"];
+         }
+
+         for (var option in optionArray) {
+         	var pair = optionArray[option].split("|");
+         	var newOption = document.createElement("option");
+         	newOption.value = pair[0];
+         	newOption.innerHTML = pair[1];
+         	s2.options.add(newOption);
+         }
+		}
+	</script>
+</head>
+<body>
+<h2>Choose Your Car</h2>
+<hr>
+Choose Car Make:
+<select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
+	<option value="" style="display: none;" selected="" hidden="">Select Program</option>
+	<option value="1">Honours</option>
+	<option value="2">Degree Pass</option>
+	<option value="3">Masters</option>
+</select>
+<hr>
+<select name="slct2" id="slct2"></select>
+</body>
+</html>
