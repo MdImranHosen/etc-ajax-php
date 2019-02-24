@@ -1,0 +1,54 @@
+<html>
+<head>
+<style>
+#animation img {
+    display: none;
+}
+#animation img:first-child {
+    display: block;
+}
+
+</style>
+</head>
+<body onload="startAnimation()">
+<div id="animation">
+    <img src="thumb0001.jpg" width="350px" height="auto" />
+    <img src="thumb0002.jpg" width="350px" height="auto" />
+    <img src="thumb0003.jpg" width="350px" height="auto" />
+     <img src="thumb0004.jpg" width="350px" height="auto"  />
+    <img src="thumb0005.jpg" width="350px" height="auto"  />  
+	<img src="thumb0006.jpg" width="350px" height="auto" />
+    <img src="thumb0007.jpg" width="350px" height="auto" />
+    <img src="thumb0008.jpg" width="350px" height="auto" />
+     <img src="thumb0009.jpg" width="350px" height="auto"  />
+    <img src="thumb0010.jpg" width="350px" height="auto"  />
+     <img src="thumb0011.jpg" width="350px" height="auto" />
+    <img src="thumb0012.jpg" width="350px" height="auto" />
+    <img src="thumb0013.jpg" width="350px" height="auto" />
+     <img src="thumb0014.jpg" width="350px" height="auto"  />
+    <img src="thumb0015.jpg" width="350px" height="auto"  />  
+	<img src="thumb0016.jpg" width="350px" height="auto" />
+    <img src="thumb0017.jpg" width="350px" height="auto" />
+    <img src="thumb0018.jpg" width="350px" height="auto" />
+     <img src="thumb0019.jpg" width="350px" height="auto"  />
+    <img src="thumb0020.jpg" width="350px" height="auto"  />
+    
+</div>
+<script>
+
+
+function startAnimation() { 
+    var frames = document.getElementById("animation").children;
+    var frameCount = frames.length;
+    var i = 0;
+    setInterval(function () { 
+        frames[i % frameCount].style.display = "none";
+        frames[++i % frameCount].style.display = "block";
+    }, 200);
+}
+
+</script>
+</body>
+
+
+</html>
